@@ -1,0 +1,14 @@
+name: Docker workflow
+on: [push]
+jobs:
+  docker_job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run my own container action
+        id: my-action
+        uses: ./.github/actions/docker_action
+        with:
+          who-to-greet: "@heorhi-deriv"
+      - name: Output the answer
+        run: echo "The answer is ${{ steps.my-action.outputs.answer }}"
