@@ -1,0 +1,17 @@
+name: Simple Workflow
+on: workflow_dispatch
+jobs:
+  simple_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output environment
+        shell: bash
+        run: |
+          echo "Runner Name: '${{ runner.name }}'"
+          echo "Runner OS: '${{ runner.os }}'"
+          echo "Runner ARCH: '${{ runner.arch }}'"
+          echo "Hello from '${{ github.actor }}'"
+          echo "Hello from '${{ github.ref }}'"
+
+        # github.ref - The fully-formed ref of the branch or tag that triggered the workflow run.
+        # github.actor - The username of the user that triggered the initial workflow run.
