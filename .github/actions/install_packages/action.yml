@@ -6,3 +6,4 @@ runs:
   steps:
     - name: Install all packages
       run: npm run bootstrap
+      shell: bash
