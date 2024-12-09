@@ -1,0 +1,13 @@
+name: Test Workflow
+
+on:
+  pull_request:
+
+jobs:
+  test_job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/install_packages
+      - name: Test
+        run: npm run jest
