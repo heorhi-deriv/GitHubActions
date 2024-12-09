@@ -7,7 +7,7 @@ jobs:
   javascript_job:
     runs-on: ubuntu-latest
     steps:
-      - uses: "./.github/actions/install_packages"
+      - uses: ./.github/actions/install_packages
       - name: Run javascript action
         id: hello
         uses: "./.github/actions/javascript_action"
@@ -20,6 +20,6 @@ jobs:
     needs: javascript_job
     runs-on: ubuntu-latest
     steps:
-      - uses: "./.github/actions/install_packages"
+      - uses: ./.github/actions/install_packages
       - name: Test
         run: npm run jest
