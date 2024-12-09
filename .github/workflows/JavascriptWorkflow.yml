@@ -2,13 +2,13 @@ name: Javascript Workflow
 on:
   push:
     branches:
-      - main
+      - test
 jobs:
   javascript_job:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install toolkit actions
+      - name: Install packages
         run: npm run bootstrap
       - name: Run javascript action
         id: hello
@@ -17,3 +17,12 @@ jobs:
           who-to-greet: "George"
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
+
+  test_job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install packages
+        run: npm run bootstrap
+      - name: Test
+        run: npm run jest

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "jest": "jest",
     "bootstrap": "npm install"
   },
   "keywords": [],
@@ -13,5 +13,8 @@
   "dependencies": {
     "@actions/core": "^1.11.1",
     "@actions/github": "^6.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
