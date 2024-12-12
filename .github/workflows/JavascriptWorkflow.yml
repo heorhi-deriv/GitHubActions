@@ -8,8 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install all packages
-        run: npm run bootstrap
+      - uses: ./.github/actions/install_packages
       - name: Run javascript action
         id: hello
         uses: "./.github/actions/javascript_action"

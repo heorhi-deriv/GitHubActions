@@ -8,7 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install all packages
-        run: npm run bootstrap
+      - uses: ./.github/actions/install_packages
       - name: Test
         run: npm run jest
